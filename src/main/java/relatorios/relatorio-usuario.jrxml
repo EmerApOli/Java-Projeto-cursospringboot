@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2020-04-15T21:23:46 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorio-usuario" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1f0af4dd-084d-4026-98a3-e98e2c515b05">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Banco Curso API REST SPring e Angular"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="407"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="583"/>
+	<queryString language="SQL">
+		<![CDATA[select * from usuario]]>
+	</queryString>
+	<field name="id" class="java.lang.Long"/>
+	<field name="cpf" class="java.lang.String"/>
+	<field name="login" class="java.lang.String"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="senha" class="java.lang.String"/>
+	<field name="data_nascimento" class="java.sql.Date"/>
+	<field name="profissao_id" class="java.lang.Long"/>
+	<field name="salario" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="15" width="575" height="30" uuid="c880b7d3-2022-48b8-9dc4-f9ec0acb534a"/>
+				<textElement textAlignment="Center">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Relatório de Usuário]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="560" height="1" uuid="396e2f81-9a3e-45f9-8e25-82af9f1a3d1c"/>
+			</line>
+			<line>
+				<reportElement x="0" y="60" width="560" height="1" uuid="770519b8-98d4-4d4f-b643-4ae063bff261"/>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="55" splitType="Stretch">
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="560" height="30" backcolor="#C4C2C2" uuid="abaad7ae-4034-4f45-905d-a242471e7770"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="4" y="0" width="96" height="30" uuid="e97bbaf6-8893-42f5-b944-849eea5b7119"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="240" height="30" uuid="285ef784-1ce5-4d33-b732-6c23d0b7d8e2"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="436" y="0" width="114" height="30" uuid="4941b93c-7c41-47b8-be93-84c419d34e2e"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Data Nascimento]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="0" width="88" height="23" uuid="37902f97-652b-41d3-83a8-3987e30d2ee8"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="330" height="23" uuid="7f11a8dc-f31a-4632-8c85-937ca0b8ff73"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="430" y="0" width="120" height="23" uuid="7976593b-5631-4ad6-accb-6a9ba16108c4"/>
+				<textElement>
+					<font fontName="DejaVu Sans Mono"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_nascimento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
